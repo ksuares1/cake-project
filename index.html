@@ -20,6 +20,7 @@
                 grid-template-columns: 1fr 1fr 1fr;
                 column-gap: 5px;
                 padding:30px;
+                margin:0 auto;
             }
             em{
                 color:white;
@@ -48,6 +49,12 @@
                     text-align: center;
                 }
 
+                .order-cake{
+                    border-radius:8px;
+                    border:solid;
+                    padding:5px;
+                    font-size:18px;
+                }
         </style>
     </head>
     <body>
@@ -76,7 +83,29 @@
  
     </div>
     <script>
+        function placeOrder(){
+            let name = prompt("What is your name?");
+            let email = prompt("What is your email address?");
+            let date = prompt("When do you need your cake?")
+            let type = prompt("What type of cake would you like to order?");
+            let delivery = prompt("Will your order be for delivery");
+            let pickup= prompt("Will your order be for pickup?")
 
+                if(delivery === delivery){
+                    alert(`Thank you, ${name}, you will receive an email confirmation for your order. Have a nice day!`)
+                }
+                if(pickup === pickup){
+                    alert(`Thank you, ${name} , you will recieve an email confirmation for your order, 
+                    and a reminder for pickup 24hrs before your order is ready to be picked up.` )
+                }
+
+                else{
+                    alert("There are some details missing from your order, can you please indicate if you would like your order delivered or picked up?")
+                }
+
+            }
+            let button =document.querySelector(".order-cake");
+            button.addEventListener("click", placeOrder);
     </script>
     </body>
     </html>
